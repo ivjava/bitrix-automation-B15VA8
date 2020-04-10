@@ -1,0 +1,1 @@
+Use  > loginPage.login("hr_user"); < method to sign in. 
