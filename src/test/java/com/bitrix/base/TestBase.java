@@ -3,6 +3,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.bitrix.pages.LoginPage;
+import com.bitrix.pages.PollPage;
+import com.bitrix.pages.PortalPage;
 import com.bitrix.utilities.BrowserUtils;
 import com.bitrix.utilities.ConfigurationReader;
 import com.bitrix.utilities.Driver;
@@ -19,6 +21,8 @@ public abstract class TestBase {
     protected WebDriverWait wait;
     protected SoftAssert softAssert;
     protected LoginPage loginPage;
+    protected PollPage pollPage;
+    protected PortalPage portalPage;
 
     protected ExtentReports report; //will only it here
     private ExtentHtmlReporter htmlReporter;
@@ -36,7 +40,6 @@ public abstract class TestBase {
         report.setSystemInfo("Environment", "QA");
         report.setSystemInfo("Browser", ConfigurationReader.getProperty("browser"));
 
-        loginPage = new LoginPage();
     }
 
     @AfterSuite
@@ -58,6 +61,10 @@ public abstract class TestBase {
         } else {
             driver.get(ConfigurationReader.getProperty(url));
         }
+
+        loginPage = new LoginPage();
+        pollPage = new PollPage();
+        portalPage = new PortalPage();
 
     }
 
