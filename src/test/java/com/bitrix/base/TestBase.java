@@ -24,7 +24,7 @@ public abstract class TestBase {
     protected PollPage pollPage;
     protected PortalPage portalPage;
 
-    protected ExtentReports report; //will only it here
+    static protected ExtentReports report;
     private ExtentHtmlReporter htmlReporter;
     protected ExtentTest test;
 
