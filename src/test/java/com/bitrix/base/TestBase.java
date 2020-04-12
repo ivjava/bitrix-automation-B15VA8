@@ -30,7 +30,7 @@ public abstract class TestBase {
     static protected ExtentReports report;
     private ExtentHtmlReporter htmlReporter;
     protected ExtentTest test;
-    protected EventPage eventPage;
+    protected EventTabPage eventTabPage;
 
     @BeforeSuite
     public void setUpSuite() {
@@ -75,7 +75,7 @@ public abstract class TestBase {
         pollTabPage = new PollTabPage();
         portalPage = new PortalPage();
         taskPage=new TaskTabPage();
-        eventPage = new EventPage();
+        eventTabPage = new EventTabPage();
 
     }
 
