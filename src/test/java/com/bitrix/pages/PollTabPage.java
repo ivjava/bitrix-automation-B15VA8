@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PollPage extends TestBase {
-    public PollPage(){
+public class PollTabPage extends TestBase {
+    public PollTabPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -24,8 +24,7 @@ public class PollPage extends TestBase {
 
     public WebElement findQbox(String number)
     {
-        WebElement questionBoxN = Driver.getDriver().findElement(By.cssSelector("#question_" + number + ""));
-        return questionBoxN;
+       return Driver.getDriver().findElement(By.cssSelector("#question_" + number + ""));
     }
 
 

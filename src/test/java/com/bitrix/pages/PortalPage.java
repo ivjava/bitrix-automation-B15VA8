@@ -12,8 +12,16 @@ public class PortalPage extends TestBase {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    @FindBy(xpath = "//span[.='Poll']")
+    public WebElement feedOptionPoll;
+
+
     @FindBy(xpath = "//span[.='Message']")
     public WebElement feedOptionMsg;
+
+    @FindBy(xpath = "//span[.='Event']")
+    public WebElement feedOptionEvent;
+
 
     public WebElement getFeedOption(String tab) {
         WebElement element = Driver.getDriver().findElement(By.xpath("//span[.='" + tab + "']"));

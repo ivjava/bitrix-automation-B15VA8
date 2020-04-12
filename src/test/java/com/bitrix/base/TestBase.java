@@ -2,10 +2,8 @@ package com.bitrix.base;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.bitrix.pages.LoginPage;
-import com.bitrix.pages.MessageTabPage;
-import com.bitrix.pages.PollPage;
-import com.bitrix.pages.PortalPage;
+import com.bitrix.pages.*;
+
 import com.bitrix.utilities.BrowserUtils;
 import com.bitrix.utilities.ConfigurationReader;
 import com.bitrix.utilities.Driver;
@@ -22,17 +20,20 @@ public abstract class TestBase {
     protected WebDriverWait wait;
     protected SoftAssert softAssert;
     protected LoginPage loginPage;
-    protected MessageTabPage messageTabPage;
-    protected PollPage pollPage;
+
+    protected PollTabPage pollTabPage;
     protected PortalPage portalPage;
+    protected TaskTabPage taskPage;
+
+    protected MessageTabPage messageTabPage;
 
     static protected ExtentReports report;
     private ExtentHtmlReporter htmlReporter;
     protected ExtentTest test;
+    protected EventPage eventPage;
 
     @BeforeSuite
-    public void setUpSuite()
-    {
+    public void setUpSuite() {
         report = new ExtentReports();
         String path = System.getProperty("user.dir")+"/test-output/report.html";
         htmlReporter = new ExtentHtmlReporter(path);
@@ -50,7 +51,6 @@ public abstract class TestBase {
         report.flush();
     }
 
-    //@Parameters("url")
     @BeforeMethod()
     public void setUpMethod(@Optional String url) {
         //System.out.println("url = " + url);
@@ -68,8 +68,14 @@ public abstract class TestBase {
         messageTabPage = new MessageTabPage();
 
         loginPage = new LoginPage();
-        pollPage = new PollPage();
+        pollTabPage = new PollTabPage();
         portalPage = new PortalPage();
+
+        loginPage = new LoginPage();
+        pollTabPage = new PollTabPage();
+        portalPage = new PortalPage();
+        taskPage=new TaskTabPage();
+        eventPage = new EventPage();
 
     }
 
