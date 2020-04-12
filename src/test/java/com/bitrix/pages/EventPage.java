@@ -24,7 +24,6 @@ public class EventPage extends TestBase {
     @FindBy (id = "event-remind_countcal_3Jcl")
     public WebElement setReminder;
 
-    Select timeUnitSelect = new Select(reminderTimeUnit);
 
 
 }
