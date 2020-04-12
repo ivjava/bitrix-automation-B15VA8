@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class EventPage extends TestBase {
+public class EventTabPage extends TestBase {
 
-    public EventPage () {
+    public EventTabPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

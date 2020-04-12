@@ -19,7 +19,7 @@ public class BitrixMessagePageTestAP extends TestBase {
         test.info("Log in as helpdesk");
         loginPage.login("helpdesk_user");
 
-        test.info("Navigating to Message Menu");
+        test.info("Navigating to Message Menu Tab");
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         portalPage.getFeedOption("Message").click();
 
@@ -33,7 +33,7 @@ public class BitrixMessagePageTestAP extends TestBase {
         wait.until(ExpectedConditions.elementToBeClickable(messageTabPage.saveButton));
         messageTabPage.saveButton.click();
 
-        test.info("Clicking on Send button");
+        test.info("Clicking On Send button");
         wait.until(ExpectedConditions.elementToBeClickable(messageTabPage.sendButton));
         messageTabPage.sendButton.click();
         test.pass("PASS: Link attached successfully");

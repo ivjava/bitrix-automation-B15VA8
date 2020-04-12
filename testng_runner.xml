@@ -7,7 +7,9 @@
             <package name="com.bitrix.tests"></package>
         </packages>
     </test>
+
 </suite>
+
 
 <!--    <test name="Bitrix24 US4_Poll_Page test">-->
 <!--        <parameter name="url " value="https://login2.nextbasecrm.com/"></parameter>-->
@@ -15,4 +17,7 @@
 <!--            <class name="com."></class>-->
 <!--        </classes>-->
 <!--    </test>-->
+
+<!--</suite>-->
+
 
