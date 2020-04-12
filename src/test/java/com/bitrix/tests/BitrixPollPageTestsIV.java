@@ -1,9 +1,6 @@
 package com.bitrix.tests;
 
 import com.bitrix.base.TestBase;
-import com.bitrix.utilities.BrowserUtils;
-import com.bitrix.utilities.ConfigurationReader;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;

@@ -71,9 +71,9 @@ public class Driver {
         return driver;
     }
 
-    public static void closeDriver()
-    {
+    public static void closeDriver() throws InterruptedException {
+        Thread.sleep(5000);
         driver.quit();
-        driver = null;   //singleton class can only access from inside
+        driver = null;
     }
 }

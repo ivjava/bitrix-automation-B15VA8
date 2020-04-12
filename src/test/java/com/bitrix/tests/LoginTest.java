@@ -15,6 +15,8 @@ public class LoginTest extends TestBase {
         test.info("Verifying Page Title");
         Assert.assertTrue(driver.getTitle().contains("Portal"), "Expected: Portal");
         test.pass("Log in successful");
+        test.pass("PASS: Log in successful");
+
 
     }
 

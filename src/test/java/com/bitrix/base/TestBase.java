@@ -3,9 +3,12 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.bitrix.pages.LoginPage;
+
 import com.bitrix.pages.PollPage;
 import com.bitrix.pages.PortalPage;
 import com.bitrix.pages.TaskPage;
+
+import com.bitrix.pages.MessageTabPage;
 import com.bitrix.utilities.BrowserUtils;
 import com.bitrix.utilities.ConfigurationReader;
 import com.bitrix.utilities.Driver;
@@ -14,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
-import java.io.IOException;
+
 
 public abstract class TestBase {
 
@@ -22,11 +25,14 @@ public abstract class TestBase {
     protected WebDriverWait wait;
     protected SoftAssert softAssert;
     protected LoginPage loginPage;
+
     protected PollPage pollPage;
     protected PortalPage portalPage;
     protected TaskPage taskPage;
 
-    protected ExtentReports report; //will only it here
+    protected MessageTabPage messageTabPage;
+
+    static protected ExtentReports report;
     private ExtentHtmlReporter htmlReporter;
     protected ExtentTest test;
 
@@ -49,11 +55,10 @@ public abstract class TestBase {
     {
         report.flush();
     }
-//
-    //@Parameters("url")
+
     @BeforeMethod()
     public void setUpMethod(@Optional String url) {
-        System.out.println("url = " + url);
+        //System.out.println("url = " + url);
         driver = Driver.getDriver();
         wait = new WebDriverWait(driver, 10);
         softAssert = new SoftAssert();
@@ -63,6 +68,13 @@ public abstract class TestBase {
         } else {
             driver.get(ConfigurationReader.getProperty(url));
         }
+        loginPage = new LoginPage();
+        portalPage = new PortalPage();
+        messageTabPage = new MessageTabPage();
+
+        loginPage = new LoginPage();
+        pollPage = new PollPage();
+        portalPage = new PortalPage();
 
         loginPage = new LoginPage();
         pollPage = new PollPage();
@@ -72,7 +84,7 @@ public abstract class TestBase {
     }
 
     @AfterMethod
-    public void tearDownMethod(ITestResult iTestResult) throws IOException {
+    public void tearDownMethod(ITestResult iTestResult) throws Exception {
 
         if (iTestResult.getStatus() == ITestResult.FAILURE) {
             test.fail(iTestResult.getName());

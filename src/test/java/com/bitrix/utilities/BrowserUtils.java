@@ -17,67 +17,40 @@ import java.util.Set;
 
 public class BrowserUtils {
 
-    public static WebDriver getDriver(String browserType) {
-        if (browserType.equalsIgnoreCase("chrome")) {  //can do switch -> binary/discrete  options
-            WebDriverManager.chromedriver().setup();
-            return new ChromeDriver();
-        } else if (browserType.equalsIgnoreCase("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            return new FirefoxDriver();
-        } else {
-            return null;
+    /**
+     * Pause test for some time
+     *
+     * @param seconds
+     */
+    public static void wait(int seconds) {
+        try {
+            Thread.sleep(1000 * seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
-
     /**
-     * A utility that takes a String title,
-     * changes to tab with given title,
-     * if such title is not found, go back to original window
-     *
-     * @param title
-     * @param driver
+     * @param elements represents collection of WebElements
+     * @return collection of strings
      */
-
-    public static void findTabByTitle(WebDriver driver, String title) {
-        Set<String> windowHandles = driver.getWindowHandles();
-        String currentHandle = driver.getWindowHandle();
-        for (String windowHandle : windowHandles) {
-            driver.switchTo().window(windowHandle);
-            if (driver.getTitle().equals(title)) {
-                break;
-            } else {
-                driver.switchTo().window(currentHandle);
+    public static List<String> getElementsText(List<WebElement> elements) {
+        List<String> textValues = new ArrayList<>();
+        for (WebElement element : elements) {
+            if (!element.getText().isEmpty()) {
+                textValues.add(element.getText());
             }
         }
-
+        return textValues;
     }
-
     /**
-     * A utility that takes a String url,
-     * changes to tab with given url,
-     * if such url is not found, go back to original window;
+     * waits for backgrounds processes on the browser to complete
      *
-     * @param driver
-     * @param url
+     * @param timeOutInSeconds
      */
-    public static void findTabByURL(WebDriver driver, String url) {
-        Set<String> windowHandles = driver.getWindowHandles();
-        String currentHandle = driver.getWindowHandle();
-        for (String windowHandle : windowHandles) {
-            driver.switchTo().window(windowHandle);
-            if (driver.getCurrentUrl().equals(url)) {
-                break;
-            } else {
-                driver.switchTo().window(currentHandle);
-            }
-        }
-    }
-
     public static void waitForPageToLoad(long timeOutInSeconds) {
-        ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
-            }
+        ExpectedCondition<Boolean> expectation = driver -> {
+            assert driver != null;
+            return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
         };
         try {
             WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeOutInSeconds);
@@ -85,20 +58,6 @@ public class BrowserUtils {
         } catch (Throwable error) {
             error.printStackTrace();
         }
-    }
-
-    public static void highlight(WebElement element) throws InterruptedException {
-        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
-        jse.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
-        Thread.sleep(200);
-        jse.executeScript("arguments[0].removeAttribute('style', 'background: yellow; border: 2px solid red;');", element);
-        Thread.sleep(200);
-
-    }
-
-    public static void scrollDown(int pixels) {
-        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
-        jse.executeScript("window.scrollBy(0," + pixels + ")");
     }
 
     /**
@@ -120,10 +79,9 @@ public class BrowserUtils {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    /*
-     * takes screenshot - lighter version than above
-     * @param name
-     * take a name of a test and returns a path to screenshot takes
+    /**
+     * @param name screenshot name
+     * @return path to the screenshot
      */
     public static String getScreenshot(String name) throws IOException {
         // name the screenshot with the current date time to avoid duplicate name
@@ -138,21 +96,4 @@ public class BrowserUtils {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
-
-    /*
-takes list of web elements
-returns list of strings
- */
-    public static List<String> getElementsText(List<WebElement> listEl)
-    {
-        //given list of webelements, return list of string
-        List<String> listSt = new ArrayList<>();
-
-        for (WebElement element : listEl) {
-            listSt.add(element.getText());
-        }
-        return listSt;
-    }
-
-
 }
