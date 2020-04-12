@@ -26,6 +26,7 @@ public abstract class TestBase {
     protected TaskTabPage taskPage;
 
     protected MessageTabPage messageTabPage;
+    protected AnnouncementPage announcementPage;
 
     static protected ExtentReports report;
     private ExtentHtmlReporter htmlReporter;
@@ -76,6 +77,7 @@ public abstract class TestBase {
         portalPage = new PortalPage();
         taskPage=new TaskTabPage();
         eventTabPage = new EventTabPage();
+        announcementPage = new AnnouncementPage();
 
     }
 
