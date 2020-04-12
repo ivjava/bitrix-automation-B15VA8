@@ -4,9 +4,9 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.bitrix.pages.LoginPage;
 
-import com.bitrix.pages.PollPage;
+import com.bitrix.pages.PollTabPage;
 import com.bitrix.pages.PortalPage;
-import com.bitrix.pages.TaskPage;
+import com.bitrix.pages.TaskTabPage;
 
 import com.bitrix.pages.MessageTabPage;
 import com.bitrix.utilities.BrowserUtils;
@@ -26,9 +26,9 @@ public abstract class TestBase {
     protected SoftAssert softAssert;
     protected LoginPage loginPage;
 
-    protected PollPage pollPage;
+    protected PollTabPage pollTabPage;
     protected PortalPage portalPage;
-    protected TaskPage taskPage;
+    protected TaskTabPage taskPage;
 
     protected MessageTabPage messageTabPage;
 
@@ -73,13 +73,13 @@ public abstract class TestBase {
         messageTabPage = new MessageTabPage();
 
         loginPage = new LoginPage();
-        pollPage = new PollPage();
+        pollTabPage = new PollTabPage();
         portalPage = new PortalPage();
 
         loginPage = new LoginPage();
-        pollPage = new PollPage();
+        pollTabPage = new PollTabPage();
         portalPage = new PortalPage();
-        taskPage=new TaskPage();
+        taskPage=new TaskTabPage();
 
     }
 

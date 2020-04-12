@@ -1,13 +1,12 @@
 package com.bitrix.pages;
 
-import com.bitrix.base.TestBase;
 import com.bitrix.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TaskPage extends PollPage {
-    public TaskPage(){
+public class TaskTabPage extends PollTabPage {
+    public TaskTabPage(){
         PageFactory.initElements(Driver.getDriver(), this); }
 
     @FindBy(xpath = "(//input[@type='checkbox'])[13]")

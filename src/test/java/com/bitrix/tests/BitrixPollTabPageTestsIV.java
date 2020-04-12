@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BitrixPollPageTestsIV extends TestBase {
+public class BitrixPollTabPageTestsIV extends TestBase {
 
 
     @Test
@@ -18,10 +18,10 @@ public class BitrixPollPageTestsIV extends TestBase {
         test.info("Navigating to Poll Menu");
         wait.until(ExpectedConditions.elementToBeClickable(portalPage.feedOptionPoll));
         portalPage.getFeedOption("Poll").click();
-        wait.until(ExpectedConditions.elementToBeClickable(pollPage.addQuestion));
+        wait.until(ExpectedConditions.elementToBeClickable(pollTabPage.addQuestion));
         test.info("Clicking Add Question Button");
-        pollPage.addQuestion.click();
-        WebElement questionBox1 = pollPage.findQbox("1");
+        pollTabPage.addQuestion.click();
+        WebElement questionBox1 = pollTabPage.findQbox("1");
         test.info("Validate New Question Box Generated");
         Assert.assertTrue(questionBox1.isDisplayed());
         test.pass("PASS: Second Question Box added successfully");

@@ -8,12 +8,6 @@
         </packages>
     </test>
 
-    <test name="Bitrix24 US1_Message_Page test">
-        <classes>
-            <class name="com.bitrix.tests.BitrixMessagePageTestAP"></class>
-        </classes>
-    </test>
-
 <!--    <test name="Bitrix24 US4_Poll_Page test">-->
 <!--        <parameter name="url " value="https://login2.nextbasecrm.com/"></parameter>-->
 <!--        <classes>-->
