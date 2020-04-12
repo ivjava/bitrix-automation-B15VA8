@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.bitrix.pages.LoginPage;
 import com.bitrix.pages.MessageTabPage;
+import com.bitrix.pages.PollPage;
 import com.bitrix.pages.PortalPage;
 import com.bitrix.utilities.BrowserUtils;
 import com.bitrix.utilities.ConfigurationReader;
@@ -13,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
-import java.io.IOException;
+
 
 public abstract class TestBase {
 
@@ -22,9 +23,10 @@ public abstract class TestBase {
     protected SoftAssert softAssert;
     protected LoginPage loginPage;
     protected MessageTabPage messageTabPage;
+    protected PollPage pollPage;
     protected PortalPage portalPage;
 
-    protected ExtentReports report; //will only it here
+    static protected ExtentReports report;
     private ExtentHtmlReporter htmlReporter;
     protected ExtentTest test;
 
@@ -40,7 +42,6 @@ public abstract class TestBase {
         report.setSystemInfo("Environment", "QA");
         report.setSystemInfo("Browser", ConfigurationReader.getProperty("browser"));
 
-        //loginPage = new LoginPage();
     }
 
     @AfterSuite
@@ -48,7 +49,7 @@ public abstract class TestBase {
     {
         report.flush();
     }
-//
+
     //@Parameters("url")
     @BeforeMethod()
     public void setUpMethod(@Optional String url) {
@@ -65,6 +66,10 @@ public abstract class TestBase {
         loginPage = new LoginPage();
         portalPage = new PortalPage();
         messageTabPage = new MessageTabPage();
+
+        loginPage = new LoginPage();
+        pollPage = new PollPage();
+        portalPage = new PortalPage();
 
     }
 
