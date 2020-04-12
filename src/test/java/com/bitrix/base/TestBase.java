@@ -37,8 +37,7 @@ public abstract class TestBase {
     protected ExtentTest test;
 
     @BeforeSuite
-    public void setUpSuite()
-    {
+    public void setUpSuite() {
         report = new ExtentReports();
         String path = System.getProperty("user.dir")+"/test-output/report.html";
         htmlReporter = new ExtentHtmlReporter(path);
