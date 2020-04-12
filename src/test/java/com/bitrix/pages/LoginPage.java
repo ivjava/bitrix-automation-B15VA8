@@ -21,17 +21,12 @@ public class LoginPage extends TestBase {
     @FindBy(css = ".login-btn")
     public WebElement logIn;
 
-
-
-
-    public void login(String username, String password)
-    {
+    public void login(String username, String password) {
         this.username.sendKeys(username);
         this.password.sendKeys(password);
         this.logIn.click();
     }
-    public void login(String user)
-    {
+    public void login(String user) {
         String username;
         String password;
         switch (user) {
