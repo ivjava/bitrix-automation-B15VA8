@@ -3,9 +3,12 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.bitrix.pages.LoginPage;
-import com.bitrix.pages.MessageTabPage;
+
 import com.bitrix.pages.PollPage;
 import com.bitrix.pages.PortalPage;
+import com.bitrix.pages.TaskPage;
+
+import com.bitrix.pages.MessageTabPage;
 import com.bitrix.utilities.BrowserUtils;
 import com.bitrix.utilities.ConfigurationReader;
 import com.bitrix.utilities.Driver;
@@ -22,9 +25,12 @@ public abstract class TestBase {
     protected WebDriverWait wait;
     protected SoftAssert softAssert;
     protected LoginPage loginPage;
-    protected MessageTabPage messageTabPage;
+
     protected PollPage pollPage;
     protected PortalPage portalPage;
+    protected TaskPage taskPage;
+
+    protected MessageTabPage messageTabPage;
 
     static protected ExtentReports report;
     private ExtentHtmlReporter htmlReporter;
@@ -50,7 +56,6 @@ public abstract class TestBase {
         report.flush();
     }
 
-    //@Parameters("url")
     @BeforeMethod()
     public void setUpMethod(@Optional String url) {
         //System.out.println("url = " + url);
@@ -70,6 +75,11 @@ public abstract class TestBase {
         loginPage = new LoginPage();
         pollPage = new PollPage();
         portalPage = new PortalPage();
+
+        loginPage = new LoginPage();
+        pollPage = new PollPage();
+        portalPage = new PortalPage();
+        taskPage=new TaskPage();
 
     }
 
