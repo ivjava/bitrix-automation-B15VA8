@@ -29,7 +29,7 @@ public class LoginTest extends TestBase {
             loginPage.login("hr_user");
             test.info("Verifying Portal Page Title");
             Assert.assertTrue(driver.getTitle().contains("Portal"), "Expected: Portal");
-            loginPage.selectPopMenu("5");
+            portalPage.logOut();
             test.info("Verifying Authorization Page Title");
             Assert.assertEquals(driver.getTitle(), "Authorization");
             test.pass("PASS: Log Out successful");
