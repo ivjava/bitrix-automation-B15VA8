@@ -77,6 +77,7 @@ public abstract class TestBase {
         portalPage = new PortalPage();
         taskPage=new TaskTabPage();
         eventTabPage = new EventTabPage();
+        announcementPage = new AnnouncementPage();
 
     }
 

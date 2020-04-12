@@ -29,20 +29,16 @@ public class BitrixMoreAnnouncementPageTestLn extends TestBase {
         portalPage.getFeedOption("More").click();
 
         test.info("Get the dropdown menu under tab MORE");
-        WebElement dropdown = driver.findElement(By.xpath("//div[@class=\"menu-popup-items\"]"));
-        wait.until(ExpectedConditions.elementToBeClickable(dropdown)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(announcementPage.dropdown)).click();
 
 
         test.info("select Announcement under tab MORE");
-        WebElement announcement = driver.findElement(By.xpath("//span[.='Announcement']"));
-        wait.until(ExpectedConditions.elementToBeClickable(announcement)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(announcementPage.announcement)).click();
 
 
         test.info("Verify that Announcement page has text - show announcement: ");
-        WebElement text = driver.findElement(By.xpath("//span[.='show announcement:']"));
-
         test.info("Text sucessfully verified");
-        Assert.assertTrue(text.isDisplayed());
+        Assert.assertTrue(announcementPage.text.isDisplayed());
 
 
     }
