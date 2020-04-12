@@ -3,9 +3,12 @@ package com.bitrix.tests;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.bitrix.base.TestBase;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
+
+import static org.testng.Assert.assertEquals;
 
 public class BitrixMessagePageTestAP extends TestBase {
 
@@ -18,7 +21,6 @@ public class BitrixMessagePageTestAP extends TestBase {
 
         test.info("Navigating to Message Menu");
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-        //wait.until(ExpectedConditions.elementToBeClickable(portalPage.feedOptionMsg));
         portalPage.getFeedOption("Message").click();
 
         test.info("Clicking on link icon");
@@ -35,5 +37,6 @@ public class BitrixMessagePageTestAP extends TestBase {
         wait.until(ExpectedConditions.elementToBeClickable(messageTabPage.sendButton));
         messageTabPage.sendButton.click();
         test.pass("PASS: Link attached successfully");
+        assertEquals(driver.getTitle(), "(5) Portal");
     }
 }
