@@ -1,6 +1,8 @@
 package com.bitrix.tests;
 
 import com.bitrix.base.TestBase;
+import com.bitrix.pages.PortalPage;
+import com.bitrix.pages.TaskPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,15 +14,9 @@ public class BitRixTaskPageTestOC extends TestBase {
     @Test
     public void test() {
         loginPage.login("hr_user");
-
-        WebElement task = driver.findElement(By.xpath("//span[.='Task']"));
-        task.click();
-
+        portalPage.getFeedOption("Task").click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@type='checkbox'])[13]")));
-        WebElement checkbox = driver.findElement(By.xpath("(//input[@type='checkbox'])[13]"));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(checkbox).click().build().perform();
-
-        Assert.assertTrue(checkbox.isDisplayed());
+        taskPage.checkBoxHighPriority.click();
+        Assert.assertTrue(taskPage.checkBoxHighPriority.isSelected());
     }
 }
