@@ -21,11 +21,16 @@ public class PortalPage extends TestBase {
     @FindBy(xpath = "//span[.='Message']")
     public WebElement feedOptionMsg;
 
+
     @FindBy(xpath = "//span[@class='menu-popup-item-text']")
     public WebElement menuPopUp;
 
     @FindBy(css = "#user-block")
     public WebElement userBlock;
+
+    @FindBy(xpath = "//span[.='Event']")
+    public WebElement feedOptionEvent;
+
 
 
     public WebElement getFeedOption(String tab) {

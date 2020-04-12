@@ -2,13 +2,8 @@ package com.bitrix.base;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.bitrix.pages.LoginPage;
+import com.bitrix.pages.*;
 
-import com.bitrix.pages.PollTabPage;
-import com.bitrix.pages.PortalPage;
-import com.bitrix.pages.TaskTabPage;
-
-import com.bitrix.pages.MessageTabPage;
 import com.bitrix.utilities.BrowserUtils;
 import com.bitrix.utilities.ConfigurationReader;
 import com.bitrix.utilities.Driver;
@@ -35,10 +30,10 @@ public abstract class TestBase {
     static protected ExtentReports report;
     private ExtentHtmlReporter htmlReporter;
     protected ExtentTest test;
+    protected EventPage eventPage;
 
     @BeforeSuite
-    public void setUpSuite()
-    {
+    public void setUpSuite() {
         report = new ExtentReports();
         String path = System.getProperty("user.dir")+"/test-output/report.html";
         htmlReporter = new ExtentHtmlReporter(path);
@@ -80,6 +75,7 @@ public abstract class TestBase {
         pollTabPage = new PollTabPage();
         portalPage = new PortalPage();
         taskPage=new TaskTabPage();
+        eventPage = new EventPage();
 
     }
 
