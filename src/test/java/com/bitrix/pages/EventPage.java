@@ -14,6 +14,9 @@ public class EventPage extends TestBase {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    @FindBy (id = "feed-cal-event-namecal_3Jcl")
+    public WebElement eventName;
+
 
     @FindBy (className = "feed-event-date-label")
     public WebElement eventStartTime;
@@ -23,6 +26,26 @@ public class EventPage extends TestBase {
 
     @FindBy (id = "event-remind_countcal_3Jcl")
     public WebElement setReminder;
+
+    @FindBy (id = "event-locationcal_3Jcl")
+    public WebElement location;
+
+    @FindBy (className = "Central Meeting Room")
+    public WebElement centralRoom;
+
+    @FindBy (id = "feed-event-dest-add-link")
+    public WebElement members;
+
+    @FindBy (id = "calnAJEM3_last_UA")
+    public WebElement allEmployee;
+
+    @FindBy (xpath = "//span[@class='popup-window-close-icon']")
+    public WebElement closeMemberButton;
+
+    @FindBy (id = "blog-submit-button-save")
+    public WebElement sendButton;
+
+
 
 
 
