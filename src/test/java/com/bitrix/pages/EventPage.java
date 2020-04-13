@@ -45,6 +45,13 @@ public class EventPage extends TestBase {
     @FindBy (id = "blog-submit-button-save")
     public WebElement sendButton;
 
+    @FindBy (xpath = "(//*[text()='Event name:'])[1]")
+    public WebElement eventSubmissionVerification;
+
+    @FindBy (xpath = "(//td[@class='feed-calendar-view-text-cell-r']/a)[1]")
+    public WebElement submittedEvenTitle;
+
+
 
 
 

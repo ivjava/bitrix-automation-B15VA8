@@ -1,13 +1,15 @@
 package com.bitrix.tests;
 
 import com.bitrix.base.TestBase;
-import com.bitrix.pages.EventPage;
-import com.bitrix.pages.LoginPage;
-import com.bitrix.pages.PortalPage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
+
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 public class BitrixEventPageTest_HH extends TestBase {
 
@@ -24,11 +26,18 @@ public class BitrixEventPageTest_HH extends TestBase {
         portalPage.getFeedOption("Event").click();
 
         test.info("providing the name for event");
-        eventPage.eventName.sendKeys("Test Case no : 1-11");
+        String eventTitle = "test for event- ts= g8-11";
+        eventPage.eventName.sendKeys(eventTitle);
 
         test.info("submitting the event");
 
         eventPage.sendButton.click();
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(eventPage.submittedEvenTitle));
+        test.info("verifying that event created and title is correct");
+        Assert.assertEquals(eventPage.submittedEvenTitle.getText(), eventTitle);
+        test.pass("event created successfully");
 
 
     }
@@ -59,6 +68,7 @@ public class BitrixEventPageTest_HH extends TestBase {
 
         test.info("submitting the event");
         eventPage.sendButton.click();
+        test.pass("reminder is created");
 
     }
 
@@ -86,7 +96,9 @@ public class BitrixEventPageTest_HH extends TestBase {
         test.info("submitting the event");
 
         eventPage.sendButton.click();
+        test.pass("member added to event successfully");
 
     }
+
 
 }
