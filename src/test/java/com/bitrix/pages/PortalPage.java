@@ -31,8 +31,6 @@ public class PortalPage extends TestBase {
     @FindBy(xpath = "//span[.='Event']")
     public WebElement feedOptionEvent;
 
-
-
     public WebElement getFeedOption(String tab) {
         return Driver.getDriver().findElement(By.xpath("//span[.='" + tab + "']"));
     }
@@ -58,8 +56,7 @@ public class PortalPage extends TestBase {
      * Method logs out of the application
      */
 
-    public void logOut()
-    {
+    public void logOut() {
         userBlock.click();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.elementToBeClickable(menuPopUp));
