@@ -27,6 +27,7 @@ public abstract class TestBase {
 
     protected MessageTabPage messageTabPage;
     protected AnnouncementPage announcementPage;
+    protected WorkflowPage workflowPage;
 
     static protected ExtentReports report;
     private ExtentHtmlReporter htmlReporter;
@@ -78,6 +79,7 @@ public abstract class TestBase {
         taskPage=new TaskTabPage();
         eventTabPage = new EventTabPage();
         announcementPage = new AnnouncementPage();
+        workflowPage = new WorkflowPage();
 
     }
 
