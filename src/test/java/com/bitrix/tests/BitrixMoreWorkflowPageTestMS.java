@@ -21,7 +21,6 @@ public class BitrixMoreWorkflowPageTestMS extends TestBase {
         portalPage.getFeedOption("More").click();
 
         test.info("Open the dropdown menu under tab MORE");
-        Thread.sleep(5000);
         wait.until(ExpectedConditions.elementToBeClickable(workflowPage.dropdown)).click();
 
         test.info("select Workflow under tab MORE");
