@@ -32,7 +32,6 @@ public class PortalPage extends TestBase {
     public WebElement feedOptionEvent;
 
 
-
     public WebElement getFeedOption(String tab) {
         return Driver.getDriver().findElement(By.xpath("//span[.='" + tab + "']"));
     }
