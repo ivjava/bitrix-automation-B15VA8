@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class BitrixMoreWorkflowPageTestMS extends TestBase {
+public class BitrixWorkflowTabTestMS extends TestBase {
 
     @Test
     public void verifyWorkflow() throws InterruptedException {

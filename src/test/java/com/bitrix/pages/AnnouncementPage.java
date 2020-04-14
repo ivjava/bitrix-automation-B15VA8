@@ -23,8 +23,7 @@ public class AnnouncementPage extends TestBase {
 
 
     public WebElement findIcon(String title) {
-        WebElement icon = Driver.getDriver().findElement(By.xpath("//span[@title ='"+title+"']"));
-        return icon;
+        return Driver.getDriver().findElement(By.xpath("//span[@title ='"+title+"']"));
     }
 
 

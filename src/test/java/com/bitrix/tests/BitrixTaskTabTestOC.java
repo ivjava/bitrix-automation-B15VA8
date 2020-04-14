@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BitRixTaskPageTestOC extends TestBase {
+public class BitrixTaskTabTestOC extends TestBase {
     @Test
     public void test() {
         loginPage.login("hr_user");

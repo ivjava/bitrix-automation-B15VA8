@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class BitrixMessagePageTestAP extends TestBase {
+public class BitrixMessageTabTestAP extends TestBase {
 
     @Test
     public void clickOnLinkIcon() throws InterruptedException {

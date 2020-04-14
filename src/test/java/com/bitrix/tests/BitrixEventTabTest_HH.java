@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class BitrixEventTabPageTest_HH extends TestBase {
+public class BitrixEventTabTest_HH extends TestBase {
 
     @Test
     public void reminderTest (){

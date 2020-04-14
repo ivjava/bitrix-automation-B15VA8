@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BitrixPollTabPageTestsIV extends TestBase {
+public class BitrixPollTabTestsIV extends TestBase {
 
 
     @Test

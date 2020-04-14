@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class BitrixMoreAnnouncementPageTestLn extends TestBase {
+public class BitrixAnnouncementTabTestLN extends TestBase {
 
     //.US7 As a user, I should be able to send annoucement from Annoucement
     // subheadding from "More" under Activity Stream.
