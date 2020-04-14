@@ -30,7 +30,7 @@ public class BitrixEventTabTestHH extends TestBase {
         eventTabPage.sendButton.click();
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(eventTabPage.submittedEvenTitle));
+        //wait.until(ExpectedConditions.elementToBeClickable(eventTabPage.submittedEvenTitle));
         test.info("verifying that event created and title is correct");
         Assert.assertEquals(eventTabPage.submittedEvenTitle.getText(), eventTitle);
         test.pass("event created successfully");
