@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class BitrixMessagePageTestAP extends TestBase {
 
@@ -37,6 +38,6 @@ public class BitrixMessagePageTestAP extends TestBase {
         wait.until(ExpectedConditions.elementToBeClickable(messageTabPage.sendButton));
         messageTabPage.sendButton.click();
         test.pass("PASS: Link attached successfully");
-        assertEquals(driver.getTitle(), "(5) Portal");
+        assertTrue(driver.getTitle().contains("Portal"));
     }
 }
