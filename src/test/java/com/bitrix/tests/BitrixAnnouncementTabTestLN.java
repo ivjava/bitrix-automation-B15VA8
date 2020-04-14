@@ -26,6 +26,7 @@ public class BitrixAnnouncementTabTestLN extends TestBase {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         test.info("Navigate to tab MORE");
+        wait.until(ExpectedConditions.elementToBeClickable(portalPage.getFeedOption("More")));
         portalPage.getFeedOption("More").click();
 
         test.info("Get the dropdown menu under tab MORE");
