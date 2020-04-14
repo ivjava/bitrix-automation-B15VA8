@@ -24,6 +24,32 @@ public class EventTabPage extends TestBase {
     @FindBy (id = "event-remind_countcal_3Jcl")
     public WebElement setReminder;
 
+    @FindBy(id = "feed-cal-event-namecal_3Jcl")
+    public WebElement eventName;
+
+    @FindBy (id = "event-locationcal_3Jcl")
+    public WebElement location;
+
+    @FindBy (className = "Central Meeting Room")
+    public WebElement centralRoom;
+
+    @FindBy (id = "feed-event-dest-add-link")
+    public WebElement members;
+
+    @FindBy (id = "calnAJEM3_last_UA")
+    public WebElement allEmployee;
+
+    @FindBy (xpath = "//span[@class='popup-window-close-icon']")
+    public WebElement closeMemberButton;
+
+    @FindBy (id = "blog-submit-button-save")
+    public WebElement sendButton;
+
+    @FindBy (xpath = "(//*[text()='Event name:'])[1]")
+    public WebElement eventSubmissionVerification;
+
+    @FindBy (xpath = "(//td[@class='feed-calendar-view-text-cell-r']/a)[1]")
+    public WebElement submittedEvenTitle;
 
 
 }
