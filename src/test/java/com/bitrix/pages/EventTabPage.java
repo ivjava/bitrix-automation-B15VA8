@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import javax.xml.xpath.XPath;
+
 public class EventTabPage extends TestBase {
 
     public EventTabPage() {
@@ -48,7 +50,7 @@ public class EventTabPage extends TestBase {
     @FindBy (xpath = "(//*[text()='Event name:'])[1]")
     public WebElement eventSubmissionVerification;
 
-    @FindBy (xpath = "(//td[@class='feed-calendar-view-text-cell-r']/a)[1]")
+    @FindBy (xpath = "(//td[@class='feed-calendar-view-text-cell-r']/../td[2]/a)[1]")
     public WebElement submittedEvenTitle;
 
 
