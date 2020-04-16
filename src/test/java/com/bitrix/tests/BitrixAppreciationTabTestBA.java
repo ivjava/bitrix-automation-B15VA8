@@ -17,7 +17,6 @@ public class BitrixAppreciationTabTestBA extends TestBase {
         test.info("Login as Marketing");
         loginPage.login("marketing_user");
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-        driver.manage().window().fullscreen();
 
         test.info("Navigating to MORE and click on dropdown button");
         wait.until(ExpectedConditions.elementToBeClickable(portalPage.getFeedOption("More")));
@@ -27,11 +26,7 @@ public class BitrixAppreciationTabTestBA extends TestBase {
         wait.until(ExpectedConditions.elementToBeClickable(appreciationPage.appreciation)).click();
 
         test.info("Click on Topic icon");
-        if(appreciationPage.topicText.isDisplayed()) {
-
-        }else {
-            wait.until(ExpectedConditions.elementToBeClickable(appreciationPage.topicIcon)).click();
-        }
+        wait.until(ExpectedConditions.elementToBeClickable(appreciationPage.topicIcon)).click();
 
         test.info("Verify Topic text is visible");
         assertTrue(appreciationPage.topicText.isDisplayed());
@@ -95,7 +90,6 @@ public class BitrixAppreciationTabTestBA extends TestBase {
         test.info("Login as Marketing");
         loginPage.login("marketing_user");
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-        driver.manage().window().fullscreen();
 
         test.info("Navigating to MORE and click on dropdown button");
         wait.until(ExpectedConditions.elementToBeClickable(portalPage.getFeedOption("More")));

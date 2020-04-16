@@ -3,8 +3,8 @@
 <suite name="B15VA8 Bitrix24 automation suite">
     <test name="Bitrix24 Smoke Test">
         <parameter name="url " value="https://login2.nextbasecrm.com/"></parameter>
-        <classes>
-            <class name="com.bitrix.tests.LoginTest"></class>
-        </classes>
+       <packages>
+           <package name="com.bitrix.tests"></package>
+       </packages>
     </test>
 </suite>
