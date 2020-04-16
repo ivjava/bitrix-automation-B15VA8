@@ -2,10 +2,18 @@
 
 <suite name="B15VA8 Bitrix24 automation suite">
     <test name="Bitrix24 Regression test">
-        <parameter name="url " value="https://login2.nextbasecrm.com/"></parameter>
-        <packages>
-            <package name="com.bitrix.tests"></package>
-        </packages>
+        <parameter name="url " value="https://login2.nextbasecrm.com/"/>
+                   <packages>
+                       <package name="com.bitrix.tests"/>
+                   </packages>
+        <classes>
+            <class name="com.bitrix.tests.BitrixAppreciationTabTestBA">
+                <methods>
+                    <exclude name="emoji.*"/>
+                    <exclude name="topic.*"/>
+                </methods>
+            </class>
+        </classes>
     </test>
 </suite>
 
