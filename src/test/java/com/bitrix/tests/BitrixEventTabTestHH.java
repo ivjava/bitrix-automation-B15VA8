@@ -29,10 +29,16 @@ public class BitrixEventTabTestHH extends TestBase {
 
         eventTabPage.sendButton.click();
 
+        try{
+            wait.until(ExpectedConditions.elementToBeClickable(eventTabPage.submittedEvenTitle));
+            test.info("verifying that event created and title is correct 1");
+            Assert.assertEquals(eventTabPage.submittedEvenTitle.getText(), eventTitle);
+        }catch (Exception e){
+            wait.until(ExpectedConditions.elementToBeClickable(eventTabPage.submittedEventTitle2));
+            test.info("verifying that event created and title is correct 2");
+            Assert.assertEquals(eventTabPage.submittedEventTitle2.getText(), eventTitle);
+        }
 
-        wait.until(ExpectedConditions.elementToBeClickable(eventTabPage.submittedEvenTitle));
-        test.info("verifying that event created and title is correct");
-        Assert.assertEquals(eventTabPage.submittedEvenTitle.getText(), eventTitle);
         test.pass("event created successfully");
 
 
@@ -78,6 +84,8 @@ public class BitrixEventTabTestHH extends TestBase {
 
 
         test.info("Navigating to Event Tab");
+
+        wait.until(ExpectedConditions.elementToBeClickable(portalPage.getFeedOption("Event")));
         portalPage.getFeedOption("Event").click();
 
         eventTabPage.eventName.sendKeys("Test Case no : 1-13");
