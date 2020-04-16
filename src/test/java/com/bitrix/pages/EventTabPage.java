@@ -53,5 +53,8 @@ public class EventTabPage extends TestBase {
     @FindBy (xpath = "(//td[@class='feed-calendar-view-text-cell-r']/../td[2]/a)[1]")
     public WebElement submittedEvenTitle;
 
+    @FindBy (xpath = "(//td[@class='feed-calendar-view-text-cell-r']/../td[2]/a)[1]")
+    public WebElement submittedEventTitle2;
+
 
 }
