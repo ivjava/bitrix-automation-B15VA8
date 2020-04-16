@@ -34,6 +34,8 @@ public abstract class TestBase {
     protected ExtentTest test;
     protected EventTabPage eventTabPage;
 
+    protected AppreciationPage appreciationPage;
+
     @BeforeSuite
     public void setUpSuite() {
         report = new ExtentReports();
@@ -80,6 +82,8 @@ public abstract class TestBase {
         eventTabPage = new EventTabPage();
         announcementPage = new AnnouncementPage();
         workflowPage = new WorkflowPage();
+
+        appreciationPage = new AppreciationPage();
 
 
     }
