@@ -4,7 +4,9 @@
     <test name="Bitrix24 Regression test">
         <parameter name="url " value="https://login2.nextbasecrm.com/"></parameter>
         <packages>
-            <package name="com.bitrix.tests"></package>
+            <package name="com.bitrix.tests">
+
+            </package>
         </packages>
     </test>
 </suite>

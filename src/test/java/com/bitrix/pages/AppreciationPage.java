@@ -48,6 +48,9 @@ public class AppreciationPage extends TestBase {
     @FindBy(xpath = "//span[@class='bxhtmled-top-bar-btn bxhtmled-button-smile']")
     public WebElement smileIcon;
 
+    @FindBy(xpath = "//span[@class='bxhtmled-top-bar-btn bxhtmled-button-more']")
+    public WebElement greatIcon;
+
     @FindBy(xpath = "//img[@class='bxhtmled-smile-img']")
     public WebElement emojis;
 }
